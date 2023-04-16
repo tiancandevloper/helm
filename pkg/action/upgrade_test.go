@@ -21,14 +21,14 @@ import (
 	"reflect"
 	"testing"
 
-	"helm.sh/helm/v3/pkg/chart"
+	"github.com/tiancandevloper/helm/pkg/chart"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	kubefake "helm.sh/helm/v3/pkg/kube/fake"
-	"helm.sh/helm/v3/pkg/release"
-	"helm.sh/helm/v3/pkg/time"
+	kubefake "github.com/tiancandevloper/helm/pkg/kube/fake"
+	"github.com/tiancandevloper/helm/pkg/release"
+	"github.com/tiancandevloper/helm/pkg/time"
 )
 
 func upgradeAction(t *testing.T) *Upgrade {

@@ -30,10 +30,10 @@ import (
 
 	"sigs.k8s.io/yaml"
 
-	"helm.sh/helm/v3/internal/test/ensure"
-	"helm.sh/helm/v3/pkg/chart"
-	"helm.sh/helm/v3/pkg/cli"
-	"helm.sh/helm/v3/pkg/getter"
+	"github.com/tiancandevloper/helm/internal/test/ensure"
+	"github.com/tiancandevloper/helm/pkg/chart"
+	"github.com/tiancandevloper/helm/pkg/cli"
+	"github.com/tiancandevloper/helm/pkg/getter"
 )
 
 const (

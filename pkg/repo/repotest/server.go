@@ -35,12 +35,12 @@ import (
 	"golang.org/x/crypto/bcrypt"
 	"sigs.k8s.io/yaml"
 
-	ociRegistry "helm.sh/helm/v3/internal/experimental/registry"
-	"helm.sh/helm/v3/internal/tlsutil"
-	"helm.sh/helm/v3/pkg/chart"
-	"helm.sh/helm/v3/pkg/chart/loader"
-	"helm.sh/helm/v3/pkg/chartutil"
-	"helm.sh/helm/v3/pkg/repo"
+	ociRegistry "github.com/tiancandevloper/helm/internal/experimental/registry"
+	"github.com/tiancandevloper/helm/internal/tlsutil"
+	"github.com/tiancandevloper/helm/pkg/chart"
+	"github.com/tiancandevloper/helm/pkg/chart/loader"
+	"github.com/tiancandevloper/helm/pkg/chartutil"
+	"github.com/tiancandevloper/helm/pkg/repo"
 )
 
 // NewTempServerWithCleanup creates a server inside of a temp dir.
@@ -378,6 +378,7 @@ func (s *Server) Stop() {
 // URL returns the URL of the server.
 //
 // Example:
+//
 //	http://localhost:1776
 func (s *Server) URL() string {
 	return s.srv.URL

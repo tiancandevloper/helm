@@ -22,9 +22,9 @@ import (
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
 
-	"helm.sh/helm/v3/cmd/helm/require"
-	"helm.sh/helm/v3/pkg/plugin"
-	"helm.sh/helm/v3/pkg/plugin/installer"
+	"github.com/tiancandevloper/helm/cmd/helm/require"
+	"github.com/tiancandevloper/helm/pkg/plugin"
+	"github.com/tiancandevloper/helm/pkg/plugin/installer"
 )
 
 type pluginInstallOptions struct {

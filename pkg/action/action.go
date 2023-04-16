@@ -32,17 +32,17 @@ import (
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/rest"
 
-	"helm.sh/helm/v3/internal/experimental/registry"
-	"helm.sh/helm/v3/pkg/chart"
-	"helm.sh/helm/v3/pkg/chartutil"
-	"helm.sh/helm/v3/pkg/engine"
-	"helm.sh/helm/v3/pkg/kube"
-	"helm.sh/helm/v3/pkg/postrender"
-	"helm.sh/helm/v3/pkg/release"
-	"helm.sh/helm/v3/pkg/releaseutil"
-	"helm.sh/helm/v3/pkg/storage"
-	"helm.sh/helm/v3/pkg/storage/driver"
-	"helm.sh/helm/v3/pkg/time"
+	"github.com/tiancandevloper/helm/internal/experimental/registry"
+	"github.com/tiancandevloper/helm/pkg/chart"
+	"github.com/tiancandevloper/helm/pkg/chartutil"
+	"github.com/tiancandevloper/helm/pkg/engine"
+	"github.com/tiancandevloper/helm/pkg/kube"
+	"github.com/tiancandevloper/helm/pkg/postrender"
+	"github.com/tiancandevloper/helm/pkg/release"
+	"github.com/tiancandevloper/helm/pkg/releaseutil"
+	"github.com/tiancandevloper/helm/pkg/storage"
+	"github.com/tiancandevloper/helm/pkg/storage/driver"
+	"github.com/tiancandevloper/helm/pkg/time"
 )
 
 // Timestamper is a function capable of producing a timestamp.Timestamper.
@@ -101,7 +101,8 @@ type Configuration struct {
 //
 // TODO: This function is badly in need of a refactor.
 // TODO: As part of the refactor the duplicate code in cmd/helm/template.go should be removed
-//       This code has to do with writing files to disk.
+//
+//	This code has to do with writing files to disk.
 func (c *Configuration) renderResources(ch *chart.Chart, values chartutil.Values, releaseName, outputDir string, subNotes, useReleaseName, includeCrds bool, pr postrender.PostRenderer, dryRun bool) ([]*release.Hook, *bytes.Buffer, string, error) {
 	hs := []*release.Hook{}
 	b := bytes.NewBuffer(nil)

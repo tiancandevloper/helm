@@ -25,11 +25,11 @@ import (
 
 	"github.com/pkg/errors"
 
-	"helm.sh/helm/v3/pkg/chartutil"
-	"helm.sh/helm/v3/pkg/cli"
-	"helm.sh/helm/v3/pkg/downloader"
-	"helm.sh/helm/v3/pkg/getter"
-	"helm.sh/helm/v3/pkg/repo"
+	"github.com/tiancandevloper/helm/pkg/chartutil"
+	"github.com/tiancandevloper/helm/pkg/cli"
+	"github.com/tiancandevloper/helm/pkg/downloader"
+	"github.com/tiancandevloper/helm/pkg/getter"
+	"github.com/tiancandevloper/helm/pkg/repo"
 )
 
 // Pull is the action for checking a given release's information.

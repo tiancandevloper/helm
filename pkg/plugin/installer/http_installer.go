@@ -13,7 +13,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package installer // import "helm.sh/helm/v3/pkg/plugin/installer"
+package installer // import "github.com/tiancandevloper/helm/pkg/plugin/installer"
 
 import (
 	"archive/tar"
@@ -29,11 +29,11 @@ import (
 	securejoin "github.com/cyphar/filepath-securejoin"
 	"github.com/pkg/errors"
 
-	"helm.sh/helm/v3/internal/third_party/dep/fs"
-	"helm.sh/helm/v3/pkg/cli"
-	"helm.sh/helm/v3/pkg/getter"
-	"helm.sh/helm/v3/pkg/helmpath"
-	"helm.sh/helm/v3/pkg/plugin/cache"
+	"github.com/tiancandevloper/helm/internal/third_party/dep/fs"
+	"github.com/tiancandevloper/helm/pkg/cli"
+	"github.com/tiancandevloper/helm/pkg/getter"
+	"github.com/tiancandevloper/helm/pkg/helmpath"
+	"github.com/tiancandevloper/helm/pkg/plugin/cache"
 )
 
 // HTTPInstaller installs plugins from an archive served by a web server.
