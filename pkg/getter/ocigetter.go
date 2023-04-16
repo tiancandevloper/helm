@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"strings"
 
-	"helm.sh/helm/v3/internal/experimental/registry"
+	"github.com/tiancandevloper/helm/internal/experimental/registry"
 )
 
 // OCIGetter is the default HTTP(/S) backend handler
@@ -28,7 +28,7 @@ type OCIGetter struct {
 	opts options
 }
 
-//Get performs a Get from repo.Getter and returns the body.
+// Get performs a Get from repo.Getter and returns the body.
 func (g *OCIGetter) Get(href string, options ...Option) (*bytes.Buffer, error) {
 	for _, opt := range options {
 		opt(&g.opts)

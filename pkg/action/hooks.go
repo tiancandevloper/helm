@@ -22,8 +22,8 @@ import (
 
 	"github.com/pkg/errors"
 
-	"helm.sh/helm/v3/pkg/release"
-	helmtime "helm.sh/helm/v3/pkg/time"
+	"github.com/tiancandevloper/helm/pkg/release"
+	helmtime "github.com/tiancandevloper/helm/pkg/time"
 )
 
 // execHook executes all of the hooks for the given hook event.

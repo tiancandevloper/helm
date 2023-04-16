@@ -24,9 +24,9 @@ import (
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
 
-	"helm.sh/helm/v3/cmd/helm/require"
-	"helm.sh/helm/v3/pkg/getter"
-	"helm.sh/helm/v3/pkg/repo"
+	"github.com/tiancandevloper/helm/cmd/helm/require"
+	"github.com/tiancandevloper/helm/pkg/getter"
+	"github.com/tiancandevloper/helm/pkg/repo"
 )
 
 const updateDesc = `

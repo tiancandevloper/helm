@@ -22,18 +22,18 @@ import (
 	"github.com/mitchellh/copystructure"
 	"github.com/pkg/errors"
 
-	"helm.sh/helm/v3/pkg/chart"
+	"github.com/tiancandevloper/helm/pkg/chart"
 )
 
 // CoalesceValues coalesces all of the values in a chart (and its subcharts).
 //
 // Values are coalesced together using the following rules:
 //
-//	- Values in a higher level chart always override values in a lower-level
-//		dependency chart
-//	- Scalar values and arrays are replaced, maps are merged
-//	- A chart has access to all of the variables for it, as well as all of
-//		the values destined for its dependencies.
+//   - Values in a higher level chart always override values in a lower-level
+//     dependency chart
+//   - Scalar values and arrays are replaced, maps are merged
+//   - A chart has access to all of the variables for it, as well as all of
+//     the values destined for its dependencies.
 func CoalesceValues(chrt *chart.Chart, vals map[string]interface{}) (Values, error) {
 	v, err := copystructure.Copy(vals)
 	if err != nil {

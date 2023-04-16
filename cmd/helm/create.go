@@ -23,10 +23,10 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"helm.sh/helm/v3/cmd/helm/require"
-	"helm.sh/helm/v3/pkg/chart"
-	"helm.sh/helm/v3/pkg/chartutil"
-	"helm.sh/helm/v3/pkg/helmpath"
+	"github.com/tiancandevloper/helm/cmd/helm/require"
+	"github.com/tiancandevloper/helm/pkg/chart"
+	"github.com/tiancandevloper/helm/pkg/chartutil"
+	"github.com/tiancandevloper/helm/pkg/helmpath"
 )
 
 const createDesc = `

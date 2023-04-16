@@ -25,15 +25,15 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 
-	"helm.sh/helm/v3/cmd/helm/require"
-	"helm.sh/helm/v3/pkg/action"
-	"helm.sh/helm/v3/pkg/chart"
-	"helm.sh/helm/v3/pkg/chart/loader"
-	"helm.sh/helm/v3/pkg/cli/output"
-	"helm.sh/helm/v3/pkg/cli/values"
-	"helm.sh/helm/v3/pkg/downloader"
-	"helm.sh/helm/v3/pkg/getter"
-	"helm.sh/helm/v3/pkg/release"
+	"github.com/tiancandevloper/helm/cmd/helm/require"
+	"github.com/tiancandevloper/helm/pkg/action"
+	"github.com/tiancandevloper/helm/pkg/chart"
+	"github.com/tiancandevloper/helm/pkg/chart/loader"
+	"github.com/tiancandevloper/helm/pkg/cli/output"
+	"github.com/tiancandevloper/helm/pkg/cli/values"
+	"github.com/tiancandevloper/helm/pkg/downloader"
+	"github.com/tiancandevloper/helm/pkg/getter"
+	"github.com/tiancandevloper/helm/pkg/release"
 )
 
 const installDesc = `

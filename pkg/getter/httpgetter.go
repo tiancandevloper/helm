@@ -23,9 +23,9 @@ import (
 
 	"github.com/pkg/errors"
 
-	"helm.sh/helm/v3/internal/tlsutil"
-	"helm.sh/helm/v3/internal/urlutil"
-	"helm.sh/helm/v3/internal/version"
+	"github.com/tiancandevloper/helm/internal/tlsutil"
+	"github.com/tiancandevloper/helm/internal/urlutil"
+	"github.com/tiancandevloper/helm/internal/version"
 )
 
 // HTTPGetter is the default HTTP(/S) backend handler
@@ -33,7 +33,7 @@ type HTTPGetter struct {
 	opts options
 }
 
-//Get performs a Get from repo.Getter and returns the body.
+// Get performs a Get from repo.Getter and returns the body.
 func (g *HTTPGetter) Get(href string, options ...Option) (*bytes.Buffer, error) {
 	for _, opt := range options {
 		opt(&g.opts)

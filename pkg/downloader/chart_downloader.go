@@ -25,13 +25,13 @@ import (
 
 	"github.com/pkg/errors"
 
-	"helm.sh/helm/v3/internal/experimental/registry"
-	"helm.sh/helm/v3/internal/fileutil"
-	"helm.sh/helm/v3/internal/urlutil"
-	"helm.sh/helm/v3/pkg/getter"
-	"helm.sh/helm/v3/pkg/helmpath"
-	"helm.sh/helm/v3/pkg/provenance"
-	"helm.sh/helm/v3/pkg/repo"
+	"github.com/tiancandevloper/helm/internal/experimental/registry"
+	"github.com/tiancandevloper/helm/internal/fileutil"
+	"github.com/tiancandevloper/helm/internal/urlutil"
+	"github.com/tiancandevloper/helm/pkg/getter"
+	"github.com/tiancandevloper/helm/pkg/helmpath"
+	"github.com/tiancandevloper/helm/pkg/provenance"
+	"github.com/tiancandevloper/helm/pkg/repo"
 )
 
 // VerificationStrategy describes a strategy for determining whether to verify a chart.
@@ -148,11 +148,11 @@ func (c *ChartDownloader) DownloadTo(ref, version, dest string) (string, *proven
 //
 // A version is a SemVer string (1.2.3-beta.1+f334a6789).
 //
-//	- For fully qualified URLs, the version will be ignored (since URLs aren't versioned)
-//	- For a chart reference
-//		* If version is non-empty, this will return the URL for that version
-//		* If version is empty, this will return the URL for the latest version
-//		* If no version can be found, an error is returned
+//   - For fully qualified URLs, the version will be ignored (since URLs aren't versioned)
+//   - For a chart reference
+//   - If version is non-empty, this will return the URL for that version
+//   - If version is empty, this will return the URL for the latest version
+//   - If no version can be found, an error is returned
 func (c *ChartDownloader) ResolveChartVersion(ref, version string) (*url.URL, error) {
 	u, err := url.Parse(ref)
 	if err != nil {
