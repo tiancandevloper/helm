@@ -98,6 +98,7 @@ type Upgrade struct {
 	PostRenderer postrender.PostRenderer
 	// DisableOpenAPIValidation controls whether OpenAPI validation is enforced.
 	DisableOpenAPIValidation bool
+	Labels                   map[string]string
 }
 
 // NewUpgrade creates a new Upgrade object with the given configuration.
@@ -232,6 +233,7 @@ func (u *Upgrade) prepareUpgrade(name string, chart *chart.Chart, vals map[strin
 		Version:  revision,
 		Manifest: manifestDoc.String(),
 		Hooks:    hooks,
+		Labels:   mergeCustomLabels(lastRelease.Labels, u.Labels),
 	}
 
 	if len(notesTxt) > 0 {
@@ -239,6 +241,16 @@ func (u *Upgrade) prepareUpgrade(name string, chart *chart.Chart, vals map[strin
 	}
 	err = validateManifest(u.cfg.KubeClient, manifestDoc.Bytes(), !u.DisableOpenAPIValidation)
 	return currentRelease, upgradedRelease, err
+}
+
+func mergeCustomLabels(current, desired map[string]string) map[string]string {
+	labels := mergeStrStrMaps(current, desired)
+	for k, v := range labels {
+		if v == "null" {
+			delete(labels, k)
+		}
+	}
+	return labels
 }
 
 func (u *Upgrade) performUpgrade(originalRelease, upgradedRelease *release.Release) (*release.Release, error) {
